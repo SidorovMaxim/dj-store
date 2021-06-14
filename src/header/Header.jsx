@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from './Nav.jsx';
+import logo from './svg/logo.svg';
 import mailIcon from './svg/mail_icon.svg';
 import phoneIcon from './svg/phone_icon.svg';
 
@@ -7,13 +8,7 @@ import phoneIcon from './svg/phone_icon.svg';
 const Header = () => {
   return (
     <header>
-      <span className="logo">
-        <span className="logo-in">
-          PRO.
-        </span>
-
-        DJSTORE
-      </span>
+      <img className="logo" src={logo} alt="logo" />
 
       <Nav />
 
