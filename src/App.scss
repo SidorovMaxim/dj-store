@@ -118,7 +118,8 @@ html {
     position: relative;
     width: 100%;
     height: 624px;
-    background-image: url(main/images/slider_image_1.jpg);
+    -webkit-transition: background 0.6s ease-in-out;
+            transition: background 0.6s ease-in-out;
 
     div.static-container {
       position: absolute;
@@ -179,51 +180,42 @@ html {
       position: absolute;
       top: 34%;
       left: calc(100% - 520px);
-      display: flex;
-      align-items: center;
-      width: 60%;
+      width: 520px;
       height: 33%;
       overflow-x: hidden;
 
-      div.slide {
-        height: 100%;
+      div.slides-container {
+        width: 1895px;
+        display: flex;
 
-        &.first {
-          width: 25%;
-        }
-
-        &.second {
-          width: 30%;
-        }
-
-        &.inactive {
+        div.slide {
+          width: 340px;
+          height: 100%;
+          margin-right: 38px;
           opacity: 0.3;
-        }
+          border-right: 1px solid rgba(255, 255, 255, 0.1);
 
-        div.number {
-          font-size: 64px;
-          font-weight: bold;
-          line-height: 78px;
-          letter-spacing: 0.02em;
-          font-feature-settings: 'pnum' on, 'lnum' on;
-          color: #397DFF;
-        }
+          &.active {
+            opacity: 1;
+          }
 
-        div.description {
-          font-size: 14px;
-          font-weight: normal;
-          line-height: 160%;
-          color: white;
-          opacity: 0.7;
-        }
-      }
+          div.number {
+            font-size: 64px;
+            font-weight: bold;
+            line-height: 78px;
+            letter-spacing: 0.02em;
+            font-feature-settings: 'pnum' on, 'lnum' on;
+            color: #397DFF;
+          }
 
-      div.vertical-line {
-        height: 100%;
-        width: 0;
-        margin: 38px;
-        border-left: 1px solid white;
-        opacity: 0.1;
+          div.description {
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 160%;
+            color: white;
+            opacity: 0.7;
+          }
+        }
       }
     }
 
@@ -244,7 +236,8 @@ html {
         border: none;
         border-radius: 50%;
         transition: 0.2s;
-        // cursor: pointer;
+        background: #397DFF;
+        cursor: pointer;
 
         &:after {
           position: absolute;
@@ -258,37 +251,20 @@ html {
           border-radius: 1px;
           transition: 0.2s;
         }
-      }
-
-      button.prev-slide {
-        background: rgba(186, 209, 255, 0.1);
-
-        &:after {
-          right: 7px;
-          opacity: 0.2;
-          transform: rotate(45deg);
-        }
-
-        &:hover {
-          background: rgba(45, 47, 48, 0.2);
-
-          &:after {
-            opacity: 0.6;
-          }  
-        }
-      }
-
-      button.next-slide {
-        background: #397DFF;
-
-        &:after {
-          left: 7px;
-          transform: rotate(-135deg);
-        }
 
         &:hover {
           background: #0049d1;
         }
+      }
+
+      button.prev-slide:after {
+        right: 7px;
+        transform: rotate(45deg);
+      }
+
+      button.next-slide:after {
+        left: 7px;
+        transform: rotate(-135deg);
       }
     }
   }
