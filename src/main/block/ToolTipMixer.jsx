@@ -5,7 +5,7 @@ import mixerIcon from '../svg/mixer_icon.svg';
 const ToolTipMixer = () => {
   const [blockOpacity, setBlockOpacity] = useState(0);
 
-  const handleDisclose = () => setBlockOpacity(1);
+  const handleOpen = () => setBlockOpacity(1);
   const handleClose = () => setBlockOpacity(0);
 
   return (
@@ -35,7 +35,7 @@ const ToolTipMixer = () => {
         <button className="close" onClick={handleClose} />
       </div>
 
-      <button className="disclose" onClick={handleDisclose}>
+      <button className="open" onClick={handleOpen}>
         +
       </button>
     </div>
