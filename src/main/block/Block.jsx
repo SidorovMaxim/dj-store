@@ -1,7 +1,7 @@
 import React from 'react';
 import blockImg1 from '../images/block_image_1.jpg';
 import blockImg2 from '../images/block_image_2.jpg';
-import PopUp from './PopUp.jsx';
+import ToolTipMixer from './ToolTipMixer.jsx';
 
 const Block = () => {
   return (
@@ -14,7 +14,7 @@ const Block = () => {
         <img src={blockImg2} alt="block-img" />
       </div>
 
-      <PopUp />
+      <ToolTipMixer />
     </section>
   );
 };
