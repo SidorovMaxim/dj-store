@@ -1,36 +1,17 @@
 import React from 'react';
-import Nav from './Nav.jsx';
 import logo from './svg/logo.svg';
-import mailIcon from './svg/mail_icon.svg';
-import phoneIcon from './svg/phone_icon.svg';
+import Nav from './Nav.jsx';
+import Mail from './Mail.jsx';
+import Phone from './Phone.jsx';
 
 
 const Header = () => {
   return (
     <header>
       <img className="logo" src={logo} alt="logo" />
-
       <Nav />
-
-      <span className="mail">
-        <img className="mail-icon" src={mailIcon} alt="mail-icon" />
-
-        <span className="mail-text">
-          info@sld-store.ru
-        </span>
-      </span>
-
-      <span className="phone">
-        <img className="phone-icon" src={phoneIcon} alt="phone-icon" />
-
-        <div className="phone-text-desc">
-          Обратный звонок
-        </div>
-
-        <div className="phone-text-number">
-          8 812 615-62-79
-        </div>
-      </span>
+      <Mail />
+      <Phone />
     </header>
   );
 };

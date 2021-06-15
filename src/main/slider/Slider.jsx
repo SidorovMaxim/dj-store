@@ -6,9 +6,7 @@ const Slider = () => {
   return (
     <section className="slider">
       <StaticContainer />
-
       <DynamicContainer />
-
       <ArrowsContainer />
     </section>
   );
