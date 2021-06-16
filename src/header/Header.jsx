@@ -8,7 +8,9 @@ import Phone from './Phone.jsx';
 const Header = () => {
   return (
     <header>
-      <img className="logo" src={logo} alt="logo" />
+      <a className="logo" href="/">
+        <img src={logo} alt="logo" />
+      </a>
       <Nav />
       <Mail />
       <Phone />

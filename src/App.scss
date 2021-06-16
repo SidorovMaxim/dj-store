@@ -73,8 +73,8 @@ html {
       @extend %flex-child;
     }
 
-    span.logo {
-      color: #2B2D3A;
+    a.logo {
+      height: 32px;
     }
 
     nav ul {
