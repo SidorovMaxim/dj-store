@@ -5,11 +5,17 @@ import DynamicContainer from './containers/dynamicContainer/DynamicContainer.jsx
 import { StaticContainer, ArrowsContainer } from './containers/Containers.jsx';
 
 
-const sliderBgImages = [sliderBgImg0, sliderBgImg1, sliderBgImg0, sliderBgImg1, sliderBgImg0];
+const sliderBgImages = [
+  sliderBgImg0,
+  sliderBgImg1,
+  sliderBgImg0,
+  sliderBgImg1,
+  sliderBgImg0
+];
 
 
 const Slider = () => {
-  const [currentSlide, setCurrentSlide] = useState(2);
+  const [ currentSlide, setCurrentSlide ] = useState(2);
 
   const handlePrevSlide = () => setCurrentSlide(currentSlide - 1);
   const handleNextSlide = () => setCurrentSlide(currentSlide + 1);

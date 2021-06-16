@@ -2,9 +2,15 @@ import React, { useEffect } from 'react';
 import { slide_0, slide_1 } from './Slides.jsx';
 
 
-const slides = [slide_0, slide_1, slide_0, slide_1, slide_0];
+const slides = [
+  slide_0,
+  slide_1,
+  slide_0,
+  slide_1,
+  slide_0
+];
 
-let slidesTransition = '0.3s';
+const slidesTransition = {value: '0.3s'};
 
 
 const DynamicContainer = (props) => {
@@ -13,15 +19,15 @@ const DynamicContainer = (props) => {
   useEffect(() => {
     setTimeout(() => {
       if (currentSlide === slides.length - 2) {
-        slidesTransition = 'none';
+        slidesTransition.value = 'none';
         setCurrentSlide(1);
         
       } else if (currentSlide === 0) {
-        slidesTransition = 'none';
+        slidesTransition.value = 'none';
         setCurrentSlide(2);
       }
 
-      slidesTransition = '0.3s';
+      slidesTransition.value = '0.3s';
     }, 300);
   });
 
@@ -30,7 +36,7 @@ const DynamicContainer = (props) => {
       <div
         className="slides-container"
         style={{
-          transition: slidesTransition,
+          transition: slidesTransition.value,
           transform: `translateX(${-379 * currentSlide}px)`
         }}
       >
