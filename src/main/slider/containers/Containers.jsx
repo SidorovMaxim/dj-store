@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { PopUpCallContext } from '../../../App.js';
 
 
 export const StaticContainer = () => {
+  const { togglePopUpCall } = useContext(PopUpCallContext);
+
   return (
     <div className="static-container">
       <div className="trend">
@@ -18,7 +21,10 @@ export const StaticContainer = () => {
         совещаний, бизнес-тренингов и онлайн-трансляции контента.
       </div>
 
-      <button className="back-call">
+      <button
+        className="back-call"
+        onClick={togglePopUpCall}
+      >
         Обратный звонок
       </button>
 

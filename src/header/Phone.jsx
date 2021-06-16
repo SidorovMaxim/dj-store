@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import phoneIcon from './svg/phone_icon.svg';
+import { PopUpCallContext } from '../App.js';
 
 
 const Phone = () => {
+  const { togglePopUpCall } = useContext(PopUpCallContext);
+  
   return (
-    <span className="phone">
+    <span className="phone" onClick={togglePopUpCall}>
       <img className="phone-icon" src={phoneIcon} alt="phone-icon" />
 
       <div className="phone-text-desc">

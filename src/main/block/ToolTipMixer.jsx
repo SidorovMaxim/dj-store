@@ -5,8 +5,7 @@ import mixerIcon from '../svg/mixer_icon.svg';
 const ToolTipMixer = () => {
   const [blockOpacity, setBlockOpacity] = useState(0);
 
-  const handleOpen = () => setBlockOpacity(1);
-  const handleClose = () => setBlockOpacity(0);
+  const toggleOpacity = () => setBlockOpacity(blockOpacity === 0 ? 1 : 0);
 
   return (
     <div className="tool-tip">
@@ -32,10 +31,10 @@ const ToolTipMixer = () => {
           <li>4 микрофонных / 10 линейных входов.</li>
         </ul>
 
-        <button className="close" onClick={handleClose} />
+        <button className="close" onClick={toggleOpacity} />
       </div>
 
-      <button className="open" onClick={handleOpen}>
+      <button className="open" onClick={toggleOpacity}>
         +
       </button>
     </div>
