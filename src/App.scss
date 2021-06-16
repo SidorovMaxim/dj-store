@@ -131,7 +131,16 @@ html {
       display: grid;
       grid-template-areas: "icon desc"
                            "icon number";
-      margin-left: 24px;
+      margin-left: 20px;
+      padding: 4px;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover {
+        border: 1px solid #397DFF;
+      }
 
       img.phone-icon {
         grid-area: icon;
@@ -204,17 +213,26 @@ html {
         line-height: 20px;
         border-radius: 8px;
         cursor: pointer;
+        transition: 0.2s;
       }
 
       button.back-call {
         background: transparent;
         border: 1px solid white;
         box-sizing: border-box;
+
+        &:hover {
+          border: 1px solid #397dff;
+        }
       }
 
       button.fill-out-brief {
         background: #397DFF;
         border: none;
+
+        &:hover {
+          background: #055dff;
+        }
       }
     }
 
@@ -295,7 +313,7 @@ html {
         }
 
         &:hover {
-          background: #0049d1;
+          background: #055dff;
         }
       }
 
@@ -338,6 +356,12 @@ html {
       border: 1px solid #397DFF;
       border-radius: 50%;
       box-sizing: border-box;
+      transition: 0.2s;
+
+      &:hover {
+        background: rgba(5, 93, 255, 0.2);
+        border-color: #055dff;
+      }
 
       .block {
         position: absolute;
@@ -386,44 +410,14 @@ html {
           }
         }
 
-        .mixer-icon {
+        img.mixer-icon {
           position: absolute;
           top: 10px;
           right: 28px;
         }
 
-        .close {
-          position: absolute;
-          right: 12px;
-          top: 12px;
-          width: 12px;
-          height: 12px;
-          background: transparent;
-          opacity: 0.8;
-          border: none;
-          cursor: pointer;
-
-          &:hover {
-            opacity: 1;
-          }
-
-          &:before, 
-          &:after {
-            position: absolute;
-            top: -2px;
-            left: 6px;
-            height: 17px;
-            width: 0.75px;
-            content: ' ';
-            background: #2B2D3A;
-          }
-
-          &:before {
-            transform: rotate(45deg);
-          }
-          &:after {
-            transform: rotate(-45deg);
-          }
+        button.close {
+          @include close-default(12, 12, 12, 1px);
         }
       }
 
@@ -437,7 +431,136 @@ html {
         border: none;
         border-radius: 50%;
         cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+          background: #055dff;
+        }
       }
+    }
+  }
+
+  div.pop-up-call {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 538px;
+    height: 408px;
+    padding: 30px 42px 48px 42px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border-radius: 16px;
+    transition: 0.5s;
+
+    div.question {
+      height: 32px;
+      margin-bottom: 12px;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 132%;
+    }
+
+    div.description {
+      height: 22px;
+      margin-bottom: 16px;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 160%;
+    }
+
+    input {
+      width: 454px;
+      height: 48px;
+      margin: 12px 0;
+      padding: 15px;
+      font-family: "Montserrat";
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 114%;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      box-sizing: border-box;
+      border-radius: 9px;
+
+      &::placeholder {
+        color: #2B2D3A;
+        opacity: 0.5;
+      }
+
+      &:hover,
+      &:focus {
+        padding: 14px;
+        border: 2px solid #397DFF; 
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &[type="submit"] {
+        height: 52px;
+        padding: 0;
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 22px;
+        background: #397DFF;
+        border: none;
+        border-radius: 8px;
+      }
+    }
+
+    div.personalInfo {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 40px;
+      padding: 20px 0 4px 0;
+      box-sizing: border-box;
+
+      div.fake-checkbox {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        background-image: url(svg/check_inactive.svg);
+        border: none;
+        box-sizing: border-box;
+        border-radius: 3px;
+        cursor: pointer;
+
+        &:hover {
+          background-image: url(svg/check_hover.svg);
+        }
+
+        &.active {
+          background-image: url(svg/check_active.svg);
+        }
+      }
+
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      span.description {
+        height: 16px;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 17px;
+
+        a {
+          color: #397DFF;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    button.close {
+      @include close-default(16, 24, 18, 2px);
     }
   }
 }
