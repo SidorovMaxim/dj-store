@@ -1,8 +1,6 @@
 import React from 'react';
 import logo from './svg/logo.svg';
-import Nav from './Nav.jsx';
-import Mail from './Mail.jsx';
-import Phone from './Phone.jsx';
+import Menu from './Menu.jsx';
 
 
 const Header = () => {
@@ -11,9 +9,7 @@ const Header = () => {
       <a className="logo" href="/">
         <img src={logo} alt="logo" />
       </a>
-      <Nav />
-      <Mail />
-      <Phone />
+      <Menu />
     </header>
   );
 };
