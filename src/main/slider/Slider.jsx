@@ -1,17 +1,50 @@
 import React, { useState } from 'react';
-import sliderBgImg0 from './images/slider_image_0.jpg';
-import sliderBgImg1 from './images/slider_image_1.jpg';
+import sliderImg_0_dt from './images/slider-img-0-dt.jpg';
+import sliderImg_1_dt from './images/slider-img-1-dt.jpg';
+import sliderImg_0_t from './images/slider-img-0-t.jpg';
+import sliderImg_1_t from './images/slider-img-1-t.jpg';
+import sliderImg_0_m from './images/slider-img-0-m.jpg';
+import sliderImg_1_m from './images/slider-img-1-m.jpg';
 import DynamicContainer from './containers/dynamicContainer/DynamicContainer.jsx';
 import { StaticContainer, ArrowsContainer } from './containers/Containers.jsx';
 
 
-const sliderBgImages = [
-  sliderBgImg0,
-  sliderBgImg1,
-  sliderBgImg0,
-  sliderBgImg1,
-  sliderBgImg0
+const SCREEN_WIDTH = window.screen.width;
+const SLIDER_IMAGES = [
+  [
+    sliderImg_0_dt,
+    sliderImg_1_dt,
+    sliderImg_0_dt,
+    sliderImg_1_dt,
+    sliderImg_0_dt
+  ],
+  [
+    sliderImg_0_t,
+    sliderImg_1_t,
+    sliderImg_0_t,
+    sliderImg_1_t,
+    sliderImg_0_t
+  ],
+  [
+    sliderImg_0_m,
+    sliderImg_1_m,
+    sliderImg_0_m,
+    sliderImg_1_m,
+    sliderImg_0_m
+  ]
 ];
+
+let sliderImgs = [];
+
+if (SCREEN_WIDTH > 768) {
+  sliderImgs = SLIDER_IMAGES[0];
+
+} else if (SCREEN_WIDTH > 320) {
+  sliderImgs = SLIDER_IMAGES[1];
+
+} else {
+  sliderImgs = SLIDER_IMAGES[2];
+}
 
 
 const Slider = () => {
@@ -24,7 +57,7 @@ const Slider = () => {
     <section
       className="slider"
       style={{
-        background: `white url(${sliderBgImages[currentSlide]})`
+        background: `white url(${sliderImgs[currentSlide]})`
       }}
     >
       <StaticContainer />
