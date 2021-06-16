@@ -77,90 +77,116 @@ html {
       height: 32px;
     }
 
-    nav ul {
+    button.menu-toggler {
+      display: none;
+    }
+
+    div.menu {
       @extend %flex-default;
       margin: 0 7.5px;
-      color: rgba(43, 45, 58, 0.7);
 
-      li {
-        @extend %flex-child;
-        position: relative;
-        margin: 0 16.5px;
-        list-style-type: none;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 17px;
+      nav ul {
+        @extend %flex-default;
+
+        a {
+          text-decoration: none;
+
+          li {
+            @extend %flex-child;
+            position: relative;
+            margin: 0 16.5px;
+            list-style-type: none;
+            color: rgba(43, 45, 58, 0.7);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+            cursor: pointer;
+
+            &.active {
+              font-weight: 600;
+              color: #397DFF;
+            }
+
+            &:after {
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              bottom: -39px;
+              content: '';
+              width: 80%;
+              height: 4px;
+              background: transparent;
+              border-radius: 6px;
+              transition: 0.2s;
+            }
+
+            &:hover:after,
+            &.active:after {
+              background: #397DFF;
+            }
+          }        
+        }
+      }
+
+      span.mail {
+        @extend %flex-default;
+        margin: 0 -5px;
+
+        div.mail-text-desc {
+          display: none;
+        }
+
+        img.mail-icon {
+          margin: 0 5px;
+        }
+
+        span.mail-text {
+          margin: 0 5px;
+          font-size: 13px;
+          font-weight: 600;
+          line-height: 16px;
+        }
+      }
+
+      span.phone {
+        display: grid;
+        grid-template-areas: "icon desc"
+                             "icon number";
+        margin-left: 20px;
+        padding: 4px;
+        border: 1px solid transparent;
+        border-radius: 6px;
         cursor: pointer;
+        transition: 0.2s;
 
-        &:after {
-          position: absolute;
-          left: 0;
-          bottom: -39px;
-          content: '';
-          width: 100%;
-          height: 4px;
-          background: transparent;
-          border-radius: 6px;
-          transition: 0.2s;
+        &:hover {
+          border: 1px solid #397DFF;
         }
 
-        &:hover:after,
-        &.active:after {
-          background: #397DFF;
+        img.phone-icon {
+          grid-area: icon;
+          margin: 2px 10px 2px 0;
+        }
+
+        div.phone-text-desc {
+          grid-area: desc;
+          color: #397DFF;
+          font-size: 10px;
+          line-height: 10px;
+        }
+
+        div.phone-text-number {
+          grid-area: number;
+          margin-top: 4px;
+          font-size: 13px;
+          font-weight: 600;
+          line-height: 16px;
         }
       }
-    }
 
-    span.mail {
-      @extend %flex-default;
-      margin: 0 -5px;
-
-      img.mail-icon {
-        margin: 0 5px;        
-      }
-
-      span.mail-text {
-        margin: 0 5px;
-        font-size: 13px;
-        font-weight: 600;
-        line-height: 16px;
-      }
-    }
-
-    span.phone {
-      display: grid;
-      grid-template-areas: "icon desc"
-                           "icon number";
-      margin-left: 20px;
-      padding: 4px;
-      border: 1px solid transparent;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: 0.2s;
-
-      &:hover {
-        border: 1px solid #397DFF;
-      }
-
-      img.phone-icon {
-        grid-area: icon;
-        margin: 2px 10px 2px 0;
-      }
-
-      div.phone-text-desc {
-        grid-area: desc;
-        color: #397DFF;
-        font-size: 10px;
-        line-height: 10px;
-      }
-
-      div.phone-text-number {
-        grid-area: number;
-        margin-top: 4px;
-        font-size: 13px;
-        font-weight: 600;
-        line-height: 16px;
-      }
+      button.fill-out-brief {
+        display: none;
+      }      
     }
   }
 
@@ -565,3 +591,136 @@ html {
   }
 }
 
+
+@media screen and (max-width: 1365px) {
+  html {
+    header {
+
+      div.menu {
+
+        span.phone {
+          display: none;
+        }
+      }
+    }
+  }  
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    header {
+      height: 100px;
+
+      a.logo {;
+        position: absolute;
+        left: 32px;
+      }
+
+      button.menu-toggler {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 32px;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background: transparent url("header/svg/menu_icon.svg");
+        border: none;
+      }
+
+      div.menu {
+        position: absolute;
+        top: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: flex-start;
+        width: 100%;
+        height: calc(100vh - 100px);
+        background: #EBEEF5;
+
+        nav {
+          width: inherit;
+          height: 528px;
+
+          ul {
+            position: absolute;
+            top: 0;
+            margin: 0;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            width: inherit;
+            height: inherit;
+
+            a {
+              width: inherit;
+
+              li {
+                height: 88px;
+                margin: 0 32px;
+                padding: 32px 0;
+                color: #2B2D3A;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 24px;
+                border-bottom: 1px solid rgba(43, 45, 58, 0.1);
+                box-sizing: border-box;
+
+                &:after {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+
+        button.fill-out-brief {
+          display: block;
+          width: 270px;
+          height: 46px;
+          margin: 42px 0 48px 32px;
+          padding: 0;
+          background: #397DFF;
+          color: white;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 22px;
+          border: none;
+          border-radius: 6px;
+          box-shadow: 0px 5.12px 20.48px rgba(85, 104, 255, 0.12);
+        }
+
+        span.mail {
+          display: block;
+
+
+        }
+      }
+    }
+  }  
+}
+
+
+@media screen and (max-width: 768px) {
+  html {
+    header {
+
+
+
+    }
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  html {
+    header {
+
+      button.menu {
+        right: 16px;
+      }
+
+    }
+  }
+}
