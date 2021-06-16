@@ -59,25 +59,3 @@ const DynamicContainer = (props) => {
 
 
 export default DynamicContainer;
-
-
-// const line = <div className="vertical-line" />;
-{/*      {slides.map((item, j) => (
-        j === currentSlide
-          ? (
-            <div
-              className={`slide slide-${j} active`}
-              key={`slide-${j}`}
-            >
-              {item}
-            </div>
-          )
-          : (
-            <div
-              className={`slide slide-${j} inactive`}
-              key={`slide-${j}`}
-            >
-              {item}
-            </div>
-          )
-      ))}*/}
