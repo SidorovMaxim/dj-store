@@ -1,3 +1,7 @@
+@use 'sass:math';
+
+
+// Extends
 %flex-default {
   display: flex;
   align-items: center;
@@ -10,11 +14,49 @@
 }
 
 
+// Mixins
+@mixin close-default($top, $right, $size, $weight) {
+  position: absolute;
+  top: $top + px;
+  right: $right + px;
+  width: $size + px;
+  height: $size + px;
+  background: transparent;
+  opacity: 0.8;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:before, 
+  &:after {
+    position: absolute;
+    top: -20%;
+    left: 45%;
+    height: math.sqrt(2 * math.pow($size, 2)) *  1px;
+    width: $weight;
+    content: ' ';
+    background: #2B2D3A;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
+
+// Styles
 html {
   overflow-x: hidden;
   font-family: "Montserrat";
-  letter-spacing: 0em;
   font-style: normal;
+  color: #2B2D3A;
+  letter-spacing: 0em;
 
 
   header {
