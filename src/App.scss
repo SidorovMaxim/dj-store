@@ -385,9 +385,14 @@ html {
       display: inline-block;
       width: 50%;
       height: 100%;
+      background-size: cover;
 
-      img.block-img {
-        width: 100%;
+      &.img-0 {
+        background-image: url(main/block/images/block-img-0-dt.jpg);
+      }
+
+      &.img-1 {
+        background-image: url(main/block/images/block-img-1-dt.jpg);
       }
     }
 
@@ -738,6 +743,16 @@ html {
           background-image: url(main/slider/images/slider-img-1-t.jpg);
         }
       }
+      div.img-container {
+
+        &.img-0 {
+          background-image: url(main/block/images/block-img-0-t.jpg);
+        }
+
+        &.img-1 {
+          background-image: url(main/block/images/block-img-1-t.jpg);
+        }
+      }
     }
   }
 }
@@ -759,6 +774,16 @@ html {
 
         &.img-1 {
           background-image: url(main/slider/images/slider-img-1-m.jpg);
+        }
+      }
+      div.img-container {
+
+        &.img-0 {
+          background-image: url(main/block/images/block-img-0-m.jpg);
+        }
+
+        &.img-1 {
+          background-image: url(main/block/images/block-img-1-m.jpg);
         }
       }
     }
