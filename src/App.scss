@@ -416,11 +416,12 @@ html {
         border-color: #055dff;
       }
 
-      .block {
+      div.block {
         position: absolute;
         bottom: 52px;
-        width: 352px;
-        height: 180px;
+        width: 90vw;
+        max-width: 352px;
+        padding-bottom: 16px;
         background: #FFFFFF;
         color: #2B2D3A;
         border-radius: 10px;
@@ -437,7 +438,7 @@ html {
           border-top: 12px solid white;
         }
 
-        .block-name {
+        div.block-name {
           margin: 16px 0 8px 24px;
           font-size: 18px;
           font-weight: 500;
@@ -449,7 +450,6 @@ html {
           padding-left: 24px;
           display: flex;
           flex-direction: column;
-          // list-style-image: url("main/svg/marker.svg");
           list-style-type: none;
 
           li {
