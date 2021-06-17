@@ -263,6 +263,7 @@ html {
       }
 
       button.back-call {
+        margin: 52px 12px auto auto;
         background: transparent;
         border: 1px solid white;
         box-sizing: border-box;
@@ -273,6 +274,7 @@ html {
       }
 
       button.fill-out-brief {
+        margin: 54px auto auto 12px;
         background: #397DFF;
         border: none;
 
@@ -378,8 +380,8 @@ html {
   section.block {
     position: relative;
     width: 100%;
-    height: 620px;
-    margin: 120px 0;
+    height: 32.3vw;
+    margin: 6.25vw 0;
 
     div.img-container {
       display: inline-block;
@@ -399,8 +401,8 @@ html {
     div.tool-tip {
       @extend %flex-default;
       position: absolute;
-      top: 11%;
-      right: 37.2%;
+      top: calc(15.5% - 30px);
+      right: calc(38.9% - 30px);
       height: 60px;
       width: 60px;
       background: rgba(57, 125, 255, 0.2);
@@ -679,18 +681,35 @@ html {
             height: inherit;
 
             a {
-              width: inherit;
+              display: flex;
+              align-items: center;
+              width: calc(100% - 64px);
+              height: 88px;
+              margin: 0 32px;
+              padding: 32px 0;
+              border-bottom: 1px solid rgba(43, 45, 58, 0.1);
+              box-sizing: border-box;
+
+              object {
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+
+                svg {
+                  fill: #397DFF;
+                }
+
+                &.active svg path {
+                  fill: #397DFF;
+                }
+              }
 
               li {
-                height: 88px;
-                margin: 0 32px;
-                padding: 32px 0;
+                margin: 0 24px;
                 color: #2B2D3A;
                 font-size: 20px;
                 font-weight: 500;
                 line-height: 24px;
-                border-bottom: 1px solid rgba(43, 45, 58, 0.1);
-                box-sizing: border-box;
 
                 &:after {
                   display: none;
@@ -717,9 +736,36 @@ html {
         }
 
         span.mail {
-          display: block;
+          margin-left: 32px;
+          display: grid;
+          grid-template-areas: "desc desc"
+                               "icon mail";
 
 
+          div.mail-text-desc {
+            grid-area: desc;
+            margin-bottom: 17px;
+            display: block;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 29px; 
+          }
+
+          img.mail-icon {
+            grid-area: icon;
+            width: 28px;
+            height: 28px;
+            margin: 0 8px 0 0;
+          }
+
+          span.mail-text {
+            grid-area: mail;
+            margin: 0 0 0 8px;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 24px;
+            color: #397DFF;
+          }
         }
       }
     }
@@ -730,8 +776,49 @@ html {
 @media screen and (max-width: 768px) {
   html {
     header {
+      height: calc(9.8vw + 25px);
 
+      a.logo {
+        left: calc(3.6vw + 4.6px);
+      }
 
+      div.menu {
+        top: calc(9.8vw + 25px);
+        height: calc(100vh - 9.8vw - 25px);
+
+        nav {
+          height: calc(6 * (7.1vw + 33px));
+
+          ul {
+
+            a {
+              width: calc(100% - 32px);
+              height: calc(7.1vw + 33px);
+              margin: 0 calc(3.6vw + 4.6px);
+              padding: calc(3.6vw + 4.6px) 0;
+
+              li {
+                font-size: calc(1.34vw + 9.7px);
+                line-height: calc(1.56vw + 12px);
+              }
+            }
+          }
+        }
+
+        button.fill-out-brief {
+          margin: calc(2.23vw + 25px) 0 calc(5.8vw - 2.6px) calc(3.6vw + 4.6px);
+          font-size: 16px;
+          line-height: 20px;
+        }
+
+        span.mail {
+          margin-left: calc(3.6vw + 4.6px);
+        }
+      }
+    }
+
+    section.slider {
+      height: 410px;
 
       div.slider-background-img {
 
@@ -743,6 +830,50 @@ html {
           background-image: url(main/slider/images/slider-img-1-t.jpg);
         }
       }
+
+      div.static-container {
+        margin: 72px auto auto calc(3.6vw + 4.6px);
+
+        div.trend {
+          font-size: calc(0.45vw + 10.6px);
+          font-weight: normal;
+          line-height: 17px;
+        }
+
+        h1 {
+          margin: calc(0.44vw + 12.6px) 0 calc(1.8vw + 10.3px) -3px;
+          font-size: calc(5.35vw + 7px);
+          line-height: calc(7.8vw - 1px);
+        }
+
+        div.description {
+          font-size: calc(0.45vw + 10.6px);
+        }
+
+        button.back-call,
+        button.fill-out-brief {
+          width: calc(50% - 12px);
+          max-width: 136px;
+          height: calc(2.2vw + 29px);
+          font-size: calc(0.45vw + 10.6px);
+          font-weight: normal;
+          line-height: 17px;
+        }
+
+        button.back-call {
+          margin: 46px calc(0.9vw + 5px) auto auto;
+        }
+
+        button.fill-out-brief {
+          margin: 46px auto auto calc(0.9vw + 5px);
+        }
+      }
+    }
+
+    section.block {
+      height: 52.2vw;
+      margin: 8.85vw 0;
+
       div.img-container {
 
         &.img-0 {
@@ -753,18 +884,118 @@ html {
           background-image: url(main/block/images/block-img-1-t.jpg);
         }
       }
+
+      div.tool-tip {
+        $size: calc(4.46vw + 25.7px);
+
+        top: calc(13% - 0.5 * (4.46vw + 25.7px));
+        right: calc(42.4% - 0.5 * (4.46vw + 25.7px));
+        width: $size;
+        height: $size;
+
+        button.open {
+          $size: calc(1.94vw + 11.1px);
+
+          width: $size;
+          height: $size;
+          font-size: calc(0.9vw + 9.1px);
+        }
+      }
     }
   }
 }
 
 
+@media screen and (max-width: 420px) {
+  html {
+
+    header {
+
+      div.menu {
+
+        span.mail {
+
+          div.mail-text-desc {
+            font-size: 22px;
+            line-height: 27px;
+          }
+
+          span.mail-text {
+            font-size: 18px;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+
+    section.block {
+
+      div.tool-tip {
+
+        div.block {
+          left: -445%;
+
+          img.mixer-icon {
+            width: 38px;
+            height: 38px;
+            top: 18px;
+            right: 44px;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 320px) {
   html {
     header {
+      height: 56px;
+
+      a.logo {
+        left: 16px;
+      }
 
       button.menu {
         right: 16px;
       }
+
+      div.menu {
+        top: 56px;
+        height: 430px;
+
+        nav {
+          height: 336px;
+
+          ul {
+
+            a {
+              width: calc(100% - 32px);
+              height: 56px;
+              margin: 0 16px;
+              padding: 16px 0;
+
+              li {
+                font-size: 14px;
+                line-height: 17px;
+              }
+            }
+          }
+        }
+
+        button.fill-out-brief {
+          margin: 32px 16px 16px 16px;
+          width: 90%;
+        }
+
+        span.mail {
+          display: none;
+        }
+      }
+    }
+
+    section.slider {
+      height: 286px;
 
       div.slider-background-img {
 
@@ -776,6 +1007,47 @@ html {
           background-image: url(main/slider/images/slider-img-1-m.jpg);
         }
       }
+
+      div.static-container {
+        margin: 24px 16px auto 16px;
+
+        div.trend {
+          font-size: 12px;
+          line-height: 14px;
+        }
+
+        h1 {
+          margin: 14px 0 16px -3px;
+          font-size: 24px;
+          line-height: 100%;
+        }
+
+        div.description {
+          font-size: 12px;
+        }
+
+        button.back-call,
+        button.fill-out-brief {
+          width: calc(50% - 8px);
+          height: 36px;
+          font-size: 12px;
+          line-height: 15px;
+        }
+
+        button.back-call {
+          margin: 24px 8px auto auto;
+        }
+
+        button.fill-out-brief {
+          margin: 24px auto auto 8px;
+        }
+      }
+    }
+
+    section.block {
+      height: 62.5vw;
+      margin: 13.1vw 0;
+
       div.img-container {
 
         &.img-0 {
