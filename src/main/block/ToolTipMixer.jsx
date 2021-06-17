@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import mixerIcon from '../svg/mixer_icon.svg';
+import mixerIcon from './images/mixer_icon.png';
 
 
 const ToolTipMixer = () => {
@@ -11,7 +11,10 @@ const ToolTipMixer = () => {
     <div className="tool-tip">
       <div
         className="block"
-        style={{opacity: blockOpacity}}
+        style={{
+          opacity: blockOpacity,
+          zIndex: blockOpacity === 0 ? -1 : 9
+      }}
       >
         <img
           className="mixer-icon"
