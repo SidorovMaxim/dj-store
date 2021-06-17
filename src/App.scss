@@ -285,11 +285,9 @@ html {
     }
 
     div.dynamic-container {
-      position: absolute;
-      top: 34%;
-      left: calc(100% - 520px);
       width: 520px;
       height: 33%;
+      margin-top: 200px;
       overflow-x: hidden;
 
       div.slides-container {
@@ -633,12 +631,25 @@ html {
   }  
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1160px) {
+  html {
+
+    section.slider {
+
+      div.dynamic-container,
+      div.arrows-container {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
   html {
     header {
       height: 100px;
 
-      a.logo {;
+      a.logo {
         position: absolute;
         left: 32px;
       }
