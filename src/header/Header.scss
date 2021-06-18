@@ -48,7 +48,7 @@ html {
         a {
           text-decoration: none;
 
-          object {
+          div.icon-container {
             display: none;
           }
 
@@ -241,17 +241,25 @@ html {
               border-bottom: 1px solid rgba(43, 45, 58, 0.1);
               box-sizing: border-box;
 
-              object {
+              div.icon-container {
                 display: inline-block;
-                width: 24px;
-                height: 24px;
+                
+                &.active {
+                  svg {
 
-                svg {
-                  fill: #397DFF;
-                }
+                    path {
+                      fill: #397DFF;
+                    }
+                    
+                    circle {
+                      stroke: #397DFF;
+                    }
 
-                &.active svg path {
-                  fill: #397DFF;
+                    &.contacts path {
+                      fill: none;
+                      stroke: #397DFF;
+                    }
+                  }
                 }
               }
 
