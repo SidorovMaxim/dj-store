@@ -8,6 +8,7 @@ html {
     position: relative;
     width: 100%;
     height: 624px;
+    margin-top: 96px;
     display: flex;
     justify-content: space-between;
     // -webkit-transition: background 0.6s ease-in-out;
@@ -207,9 +208,11 @@ html {
 }
 
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
   html {
-
+    section.slider {
+      margin-top: 100px;
+    }
   }  
 }
 
@@ -219,6 +222,7 @@ html {
 
     section.slider {
       height: 410px;
+      margin-top: calc(9.8vw + 25px);
 
       div.slider-background-img {
 
@@ -273,18 +277,12 @@ html {
 }
 
 
-@media screen and (max-width: 420px) {
-  html {
-
-  }
-}
-
-
 @media screen and (max-width: 320px) {
   html {
 
     section.slider {
       height: 286px;
+      margin-top: 56px;
 
       div.slider-background-img {
 
