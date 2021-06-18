@@ -111,7 +111,7 @@ const PopUpCall = () => {
       </div>
     );    
 
-  } else if (status === 'succes') {
+  } else if (status === 'success') {
     return (
       <div
         className="pop-up-call"
