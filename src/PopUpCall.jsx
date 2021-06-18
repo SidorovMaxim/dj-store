@@ -1,3 +1,4 @@
+import './App.scss';
 import React, { useContext, useState } from 'react';
 import { PopUpCallContext } from './App.js';
 

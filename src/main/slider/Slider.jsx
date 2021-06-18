@@ -1,3 +1,4 @@
+import './Slider.scss';
 import React, { useState } from 'react';
 import { slide_0, slide_1 } from './Slides.jsx';
 import DynamicContainer from './containers/dynamicContainer/DynamicContainer.jsx';

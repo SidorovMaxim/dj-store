@@ -1,3 +1,4 @@
+import './Header.scss';
 import React from 'react';
 import logo from './svg/logo.svg';
 import Menu from './Menu.jsx';

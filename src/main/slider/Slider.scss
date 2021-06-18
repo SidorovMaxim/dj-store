@@ -1,0 +1,336 @@
+@use 'sass:math';
+
+
+// Styles
+html {
+
+  section.slider {
+    position: relative;
+    width: 100%;
+    height: 624px;
+    display: flex;
+    justify-content: space-between;
+    // -webkit-transition: background 0.6s ease-in-out;
+    //         transition: background 0.6s ease-in-out;
+
+    div.slider-background-img {
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      transition: 0.6s;
+
+      &.img-0 {
+        background-image: url(main/slider/images/slider-img-0-dt.jpg);
+      }
+
+      &.img-1 {
+        background-image: url(main/slider/images/slider-img-1-dt.jpg);
+      }
+    }
+
+    div.static-container {
+      width: 590px;
+      margin: 123px auto 0 auto;
+      color: white;
+
+      div.trend {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22px;
+      }
+
+      h1 {
+        margin: 12px 0 24px -3px;
+        font-size: 52px;
+        font-weight: 600;
+        line-height: 63px;
+        text-align: left;
+      }
+
+      div.description {
+        width: 94%;
+        opacity: 0.8;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 148%;
+      }
+
+      button.back-call,
+      button.fill-out-brief {
+        width: 186px;
+        height: 48px;
+        margin: 54px 24px 0 0;
+        padding: 0;
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      button.back-call {
+        margin: 52px 12px auto auto;
+        background: transparent;
+        border: 1px solid white;
+        box-sizing: border-box;
+
+        &:hover {
+          border: 1px solid #397dff;
+        }
+      }
+
+      button.fill-out-brief {
+        margin: 54px auto auto 12px;
+        background: #397DFF;
+        border: none;
+
+        &:hover {
+          background: #055dff;
+        }
+      }
+    }
+
+    div.dynamic-container {
+      width: 520px;
+      height: 33%;
+      margin-top: 200px;
+      overflow-x: hidden;
+
+      div.slides-container {
+        width: 1895px;
+        display: flex;
+
+        div.slide {
+          width: 340px;
+          height: 100%;
+          margin-right: 38px;
+          opacity: 0.3;
+          border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+          &.active {
+            opacity: 1;
+          }
+
+          div.number {
+            font-size: 64px;
+            font-weight: bold;
+            line-height: 78px;
+            letter-spacing: 0.02em;
+            font-feature-settings: 'pnum' on, 'lnum' on;
+            color: #397DFF;
+          }
+
+          div.description {
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 160%;
+            color: white;
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+
+    div.arrows-container {
+      position: absolute;
+      top: 70%;
+      left: calc(100% - 520px);
+      display: flex;
+      justify-content: space-between;
+      width: 106px;
+      height: 32px;
+
+      button.prev-slide,
+      button.next-slide {
+        position: relative;
+        width: 32px;
+        height: 32px;
+        border: none;
+        border-radius: 50%;
+        transition: 0.2s;
+        background: #397DFF;
+        cursor: pointer;
+
+        &:after {
+          position: absolute;
+          top: 9px;
+          content: '';
+          display: block;
+          width: 12px;
+          height: 12px;
+          border-left: 1px solid white;
+          border-bottom: 1px solid white;
+          border-radius: 1px;
+          transition: 0.2s;
+        }
+
+        &:hover {
+          background: #055dff;
+        }
+      }
+
+      button.prev-slide:after {
+        right: 7px;
+        transform: rotate(45deg);
+      }
+
+      button.next-slide:after {
+        left: 7px;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1365px) {
+  html {
+
+  }  
+}
+
+
+@media screen and (max-width: 1160px) {
+  html {
+
+    section.slider {
+
+      div.dynamic-container,
+      div.arrows-container {
+        display: none;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1023px) {
+  html {
+
+  }  
+}
+
+
+@media screen and (max-width: 768px) {
+  html {
+
+    section.slider {
+      height: 410px;
+
+      div.slider-background-img {
+
+        &.img-0 {
+          background-image: url(main/slider/images/slider-img-0-t.jpg);
+        }
+
+        &.img-1 {
+          background-image: url(main/slider/images/slider-img-1-t.jpg);
+        }
+      }
+
+      div.static-container {
+        margin: 72px auto auto calc(3.6vw + 4.6px);
+
+        div.trend {
+          font-size: calc(0.45vw + 10.6px);
+          font-weight: normal;
+          line-height: 17px;
+        }
+
+        h1 {
+          margin: calc(0.44vw + 12.6px) 0 calc(1.8vw + 10.3px) -3px;
+          font-size: calc(5.35vw + 7px);
+          line-height: calc(7.8vw - 1px);
+        }
+
+        div.description {
+          font-size: calc(0.45vw + 10.6px);
+        }
+
+        button.back-call,
+        button.fill-out-brief {
+          width: calc(50% - 12px);
+          max-width: 136px;
+          height: calc(2.2vw + 29px);
+          font-size: calc(0.45vw + 10.6px);
+          font-weight: normal;
+          line-height: 17px;
+        }
+
+        button.back-call {
+          margin: 46px calc(0.9vw + 5px) auto auto;
+        }
+
+        button.fill-out-brief {
+          margin: 46px auto auto calc(0.9vw + 5px);
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 420px) {
+  html {
+
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  html {
+
+    section.slider {
+      height: 286px;
+
+      div.slider-background-img {
+
+        &.img-0 {
+          background-image: url(main/slider/images/slider-img-0-m.jpg);
+        }
+
+        &.img-1 {
+          background-image: url(main/slider/images/slider-img-1-m.jpg);
+        }
+      }
+
+      div.static-container {
+        margin: 24px 16px auto 16px;
+
+        div.trend {
+          font-size: 12px;
+          line-height: 14px;
+        }
+
+        h1 {
+          margin: 14px 0 16px -3px;
+          font-size: 24px;
+          line-height: 100%;
+        }
+
+        div.description {
+          font-size: 12px;
+        }
+
+        button.back-call,
+        button.fill-out-brief {
+          width: calc(50% - 8px);
+          height: 36px;
+          font-size: 12px;
+          line-height: 15px;
+        }
+
+        button.back-call {
+          margin: 24px 8px auto auto;
+        }
+
+        button.fill-out-brief {
+          margin: 24px auto auto 8px;
+        }
+      }
+    }
+  }
+}

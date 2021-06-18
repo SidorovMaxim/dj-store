@@ -1,0 +1,445 @@
+// Extends
+%flex-default {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+
+// Styles
+html {
+  overflow-x: hidden;
+  font-family: "Montserrat";
+  font-style: normal;
+  color: #2B2D3A;
+  letter-spacing: 0em;
+
+  header {
+    @extend %flex-default;
+    position: sticky;
+    z-index: 10;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 96px;
+    background: #EBEEF5;
+
+    span {
+      margin: 0 15px;
+    }
+
+    a.logo {
+      height: 32px;
+    }
+
+    button.menu-toggler {
+      display: none;
+    }
+
+    div.menu {
+      @extend %flex-default;
+      margin: 0 7.5px;
+
+      nav ul {
+        @extend %flex-default;
+
+        a {
+          text-decoration: none;
+
+          object {
+            display: none;
+          }
+
+          li {
+            position: relative;
+            margin: 0 16.5px;
+            list-style-type: none;
+            color: rgba(43, 45, 58, 0.7);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+            cursor: pointer;
+
+            &.active {
+              font-weight: 600;
+              color: #397DFF;
+            }
+
+            &:after {
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              bottom: -39px;
+              content: '';
+              width: 80%;
+              height: 4px;
+              background: transparent;
+              border-radius: 6px;
+              transition: 0.2s;
+            }
+
+            &:hover:after,
+            &.active:after {
+              background: #397DFF;
+            }
+          }        
+        }
+      }
+
+      span.mail {
+        @extend %flex-default;
+        margin: 0 -5px;
+
+        div.mail-text-desc {
+          display: none;
+        }
+
+        img.mail-icon {
+          margin: 0 5px;
+        }
+
+        span.mail-text {
+          margin: 0 5px;
+          font-size: 13px;
+          font-weight: 600;
+          line-height: 16px;
+        }
+      }
+
+      span.phone {
+        display: grid;
+        grid-template-areas: "icon desc"
+                             "icon number";
+        margin-left: 20px;
+        padding: 4px;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+          border: 1px solid #397DFF;
+        }
+
+        img.phone-icon {
+          grid-area: icon;
+          margin: 2px 10px 2px 0;
+        }
+
+        div.phone-text-desc {
+          grid-area: desc;
+          color: #397DFF;
+          font-size: 10px;
+          line-height: 10px;
+        }
+
+        div.phone-text-number {
+          grid-area: number;
+          margin-top: 4px;
+          font-size: 13px;
+          font-weight: 600;
+          line-height: 16px;
+        }
+      }
+
+      button.fill-out-brief {
+        display: none;
+      }      
+    }
+  }
+}
+
+
+@media screen and (max-width: 1365px) {
+  html {
+    header {
+
+      div.menu {
+
+        span.phone {
+          display: none;
+        }
+      }
+    }
+  }  
+}
+
+
+@media screen and (max-width: 1160px) {
+  html {
+
+  }
+}
+
+
+@media screen and (max-width: 1023px) {
+  html {
+    header {
+      height: 100px;
+
+      a.logo {
+        position: absolute;
+        left: 32px;
+      }
+
+      button.menu-toggler {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 32px;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        padding: 0;
+        border: none;
+        cursor: pointer;
+
+        &.open {
+          background: transparent url("header/svg/menu_open_icon.svg");
+        }
+        
+        &.close {
+          background: transparent url("header/svg/menu_close_icon.svg");
+        }
+      }
+
+      div.menu {
+        position: absolute;
+        top: 100px;
+        display: none;
+        flex-direction: column;
+        justify-content: left;
+        align-items: flex-start;
+        width: 100%;
+        height: calc(100vh - 100px);
+        background: #EBEEF5;
+        transition: 0.2s;
+
+        nav {
+          width: inherit;
+          height: 528px;
+
+          ul {
+            position: absolute;
+            top: 0;
+            margin: 0;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            width: inherit;
+            height: inherit;
+
+            a {
+              display: flex;
+              align-items: center;
+              width: calc(100% - 64px);
+              height: 88px;
+              margin: 0 32px;
+              padding: 32px 0;
+              border-bottom: 1px solid rgba(43, 45, 58, 0.1);
+              box-sizing: border-box;
+
+              object {
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+
+                svg {
+                  fill: #397DFF;
+                }
+
+                &.active svg path {
+                  fill: #397DFF;
+                }
+              }
+
+              li {
+                margin: 0 24px;
+                color: #2B2D3A;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 24px;
+
+                &:after {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+
+        button.fill-out-brief {
+          display: block;
+          width: 270px;
+          height: 46px;
+          margin: 42px 0 48px 32px;
+          padding: 0;
+          background: #397DFF;
+          color: white;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 22px;
+          border: none;
+          border-radius: 6px;
+          box-shadow: 0px 5.12px 20.48px rgba(85, 104, 255, 0.12);
+        }
+
+        span.mail {
+          margin-left: 32px;
+          display: grid;
+          grid-template-areas: "desc desc"
+                               "icon mail";
+
+
+          div.mail-text-desc {
+            grid-area: desc;
+            margin-bottom: 17px;
+            display: block;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 29px; 
+          }
+
+          img.mail-icon {
+            grid-area: icon;
+            width: 28px;
+            height: 28px;
+            margin: 0 8px 0 0;
+          }
+
+          span.mail-text {
+            grid-area: mail;
+            margin: 0 0 0 8px;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 24px;
+            color: #397DFF;
+          }
+        }
+      }
+    }
+  }  
+}
+
+
+@media screen and (max-width: 768px) {
+  html {
+    header {
+      height: calc(9.8vw + 25px);
+
+      a.logo {
+        left: calc(3.6vw + 4.6px);
+      }
+
+      div.menu {
+        top: calc(9.8vw + 25px);
+        height: calc(100vh - 9.8vw - 25px);
+
+        nav {
+          height: calc(6 * (7.1vw + 33px));
+
+          ul {
+
+            a {
+              width: calc(100% - 32px);
+              height: calc(7.1vw + 33px);
+              margin: 0 calc(3.6vw + 4.6px);
+              padding: calc(3.6vw + 4.6px) 0;
+
+              li {
+                font-size: calc(1.34vw + 9.7px);
+                line-height: calc(1.56vw + 12px);
+              }
+            }
+          }
+        }
+
+        button.fill-out-brief {
+          margin: calc(2.23vw + 25px) 0 calc(5.8vw - 2.6px) calc(3.6vw + 4.6px);
+          font-size: 16px;
+          line-height: 20px;
+        }
+
+        span.mail {
+          margin-left: calc(3.6vw + 4.6px);
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 420px) {
+  html {
+
+    header {
+
+      div.menu {
+
+        span.mail {
+
+          div.mail-text-desc {
+            font-size: 22px;
+            line-height: 27px;
+          }
+
+          span.mail-text {
+            font-size: 18px;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  html {
+    header {
+      height: 56px;
+
+      a.logo {
+        left: 16px;
+      }
+
+      button.menu {
+        right: 16px;
+      }
+
+      div.menu {
+        top: 56px;
+        height: 430px;
+
+        nav {
+          height: 336px;
+
+          ul {
+
+            a {
+              width: calc(100% - 32px);
+              height: 56px;
+              margin: 0 16px;
+              padding: 16px 0;
+
+              li {
+                font-size: 14px;
+                line-height: 17px;
+              }
+            }
+          }
+        }
+
+        button.fill-out-brief {
+          margin: 32px 16px 16px 16px;
+          width: 90%;
+        }
+
+        span.mail {
+          display: none;
+        }
+      }
+    }
+  }
+}

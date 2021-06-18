@@ -1,0 +1,206 @@
+@use 'sass:math';
+
+
+// Mixins
+@mixin close-default($top, $right, $size, $weight) {
+  position: absolute;
+  top: $top + px;
+  right: $right + px;
+  width: $size + px;
+  height: $size + px;
+  background: transparent;
+  opacity: 0.8;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:before, 
+  &:after {
+    position: absolute;
+    top: -20%;
+    left: 45%;
+    height: math.sqrt(2 * math.pow($size, 2)) *  1px;
+    width: $weight;
+    content: ' ';
+    background: #2B2D3A;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
+
+// Styles
+html {
+
+  div.pop-up-call {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 538px;
+    height: 408px;
+    padding: 30px 42px 48px 42px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border-radius: 16px;
+    transition: 0.5s;
+
+    div.question {
+      height: 32px;
+      margin-bottom: 12px;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 132%;
+    }
+
+    div.description {
+      height: 22px;
+      margin-bottom: 16px;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 160%;
+    }
+
+    input {
+      width: 454px;
+      height: 48px;
+      margin: 12px 0;
+      padding: 15px;
+      font-family: "Montserrat";
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 114%;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      box-sizing: border-box;
+      border-radius: 9px;
+
+      &::placeholder {
+        color: #2B2D3A;
+        opacity: 0.5;
+      }
+
+      &:hover,
+      &:focus {
+        padding: 14px;
+        border: 2px solid #397DFF; 
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &[type="submit"] {
+        height: 52px;
+        padding: 0;
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 22px;
+        background: #397DFF;
+        border: none;
+        border-radius: 8px;
+      }
+    }
+
+    div.personalInfo {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 40px;
+      padding: 20px 0 4px 0;
+      box-sizing: border-box;
+
+      div.fake-checkbox {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        background-image: url(svg/check_inactive.svg);
+        border: none;
+        box-sizing: border-box;
+        border-radius: 3px;
+        cursor: pointer;
+
+        &:hover {
+          background-image: url(svg/check_hover.svg);
+        }
+
+        &.active {
+          background-image: url(svg/check_active.svg);
+        }
+      }
+
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      span.description {
+        height: 16px;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 17px;
+
+        a {
+          color: #397DFF;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    button.close {
+      @include close-default(16, 24, 18, 2px);
+    }
+  }
+}
+
+
+@media screen and (max-width: 1365px) {
+  html {
+
+  }  
+}
+
+@media screen and (max-width: 1160px) {
+  html {
+
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  html {
+
+  }  
+}
+
+
+@media screen and (max-width: 768px) {
+  html {
+
+  }
+}
+
+
+@media screen and (max-width: 420px) {
+  html {
+
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  html {
+
+  }
+}
