@@ -46,7 +46,6 @@ html {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     width: 538px;
-    height: 408px;
     padding: 30px 42px 48px 42px;
     box-sizing: border-box;
     background: #FFFFFF;
@@ -54,7 +53,6 @@ html {
     transition: 0.5s;
 
     div.question {
-      height: 32px;
       margin-bottom: 12px;
       font-size: 24px;
       font-weight: 600;
@@ -69,95 +67,100 @@ html {
       line-height: 160%;
     }
 
-    input {
-      width: 454px;
-      height: 48px;
-      margin: 12px 0;
-      padding: 15px;
-      font-family: "Montserrat";
-      font-size: 16px;
-      font-weight: normal;
-      line-height: 114%;
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      box-sizing: border-box;
-      border-radius: 9px;
+    form {
+      width: 100%;
 
-      &::placeholder {
-        color: #2B2D3A;
-        opacity: 0.5;
-      }
-
-      &:hover,
-      &:focus {
-        padding: 14px;
-        border: 2px solid #397DFF; 
-      }
-
-      &:focus {
-        outline: none;
-      }
-
-      &[type="submit"] {
-        height: 52px;
-        padding: 0;
-        color: white;
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 22px;
-        background: #397DFF;
-        border: none;
-        border-radius: 8px;
-      }
-    }
-
-    div.personalInfo {
-      position: relative;
-      display: flex;
-      align-items: center;
-      height: 40px;
-      padding: 20px 0 4px 0;
-      box-sizing: border-box;
-
-      div.fake-checkbox {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        margin-right: 8px;
-        background-image: url(svg/check_inactive.svg);
-        border: none;
-        box-sizing: border-box;
-        border-radius: 3px;
-        cursor: pointer;
-
-        &:hover {
-          background-image: url(svg/check_hover.svg);
-        }
-
-        &.active {
-          background-image: url(svg/check_active.svg);
-        }
-      }
-
-      input[type="checkbox"] {
-        display: none;
-      }
-
-      span.description {
-        height: 16px;
-        font-size: 14px;
+      input {
+        width: 100%;
+        height: 48px;
+        margin: 12px 0;
+        padding: 15px;
+        font-family: "Montserrat";
+        font-size: 16px;
         font-weight: normal;
-        line-height: 17px;
+        line-height: 114%;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+        border-radius: 9px;
 
-        a {
-          color: #397DFF;
-          text-decoration: none;
+        &::placeholder {
+          color: #2B2D3A;
+          opacity: 0.5;
+        }
+
+        &:hover,
+        &:focus {
+          padding: 14px;
+          border: 2px solid #397DFF; 
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &[type="submit"] {
+          height: 52px;
+          margin-bottom: 0;
+          padding: 0;
+          color: white;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 22px;
+          background: #397DFF;
+          border: none;
+          border-radius: 8px;
+        }
+      }
+
+      div.personalInfo {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 40px;
+        padding: 20px 0 4px 0;
+        box-sizing: border-box;
+
+        div.fake-checkbox {
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          margin-right: 8px;
+          background-image: url(svg/check_inactive.svg);
+          border: none;
+          box-sizing: border-box;
+          border-radius: 3px;
+          cursor: pointer;
 
           &:hover {
-            text-decoration: underline;
+            background-image: url(svg/check_hover.svg);
+          }
+
+          &.active {
+            background-image: url(svg/check_active.svg);
           }
         }
-      }
+
+        input[type="checkbox"] {
+          display: none;
+        }
+
+        span.description {
+          font-size: 14px;
+          font-weight: normal;
+          line-height: 17px;
+
+          a {
+            color: #397DFF;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }      
     }
+
 
     button.close {
       @include close-default(16, 24, 18, 2px);
@@ -166,41 +169,87 @@ html {
 }
 
 
-@media screen and (max-width: 1365px) {
+@media screen and (max-width: 598px) {
   html {
 
-  }  
-}
+    div.pop-up-call {
+      width: 90%;
+      padding: 32px calc(9.4vw - 14px) calc(8.6vw - 3.6px) calc(9.4vw - 14px);
 
-@media screen and (max-width: 1160px) {
-  html {
+      div.question {
+        line-height: 29px;
+      }
 
-  }
-}
+      div.description {
+        font-size: calc(1.4vw + 7.4px);
+      }
 
-@media screen and (max-width: 1023px) {
-  html {
+      form {
 
-  }  
-}
+        input {
+          height: 42px;
+          margin: calc(2.5vw - 3px) 0;
+          font-size: 14px;
 
+          &[type="submit"] {
+            height: 46px;
+            margin-top: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
+          }
+        }
 
-@media screen and (max-width: 768px) {
-  html {
+        div.personalInfo {
 
-  }
-}
+          span.description {
+            font-size: calc(2.2vw + 1.1px);
+            line-height: calc(2.5vw + 2px);
+          }
+        }
+      }
 
-
-@media screen and (max-width: 420px) {
-  html {
-
+      button.close {
+        @include close-default(16, 19, 14, 1px);
+      }
+    }
   }
 }
 
 
 @media screen and (max-width: 320px) {
   html {
+    div.pop-up-call {
+      height: 362px;
+      padding: 32px 16px 24px 16px;
+      border-radius: 12px;
 
+      div.description {
+        font-size: 12px;
+      }
+
+      form {
+
+        input {
+          margin: 5px 0;
+          padding: 12px;
+
+          &:hover,
+          &:focus {
+            padding: 11px;
+          }
+        }
+
+        div.personalInfo {
+          height: 40px;
+          padding: 11px 0 4px 0;
+
+          span.description {
+            font-size: 8px;
+            line-height: 10px;
+          }
+        }
+      }
+    }
   }
 }

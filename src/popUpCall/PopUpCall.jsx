@@ -37,7 +37,7 @@ const PopUpCall = () => {
       </div>
 
       <div className="description">
-        Заполните форму ниже и мы свяжемся с вами.
+        Заполните форму ниже и мы свяжемся&nbsp;с&nbsp;вами.
       </div>
 
       <form onSubmit={handleFormChange}>
@@ -62,10 +62,10 @@ const PopUpCall = () => {
           />
           
           <span className="description">
-            Я согласен с условиями обработки&nbsp;
+            Я согласен с условиями обработки{" "}
 
             <a href="/personalInfo">
-              персональных данных
+              персональных&nbsp;данных
             </a>
           </span>
         </div>
