@@ -1,6 +1,6 @@
-import './App.scss';
+import './PopUpCall.scss';
 import React, { useContext, useState } from 'react';
-import { PopUpCallContext } from './App.js';
+import { PopUpCallContext } from '../App.js';
 
 
 const PopUpCall = () => {
