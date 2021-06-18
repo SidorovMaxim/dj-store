@@ -62,11 +62,11 @@ html {
       background-size: cover;
 
       &.img-0 {
-        background-image: url(main/block/images/block-img-0-dt.jpg);
+        background-image: url(images/block-img-0-dt.jpg);
       }
 
       &.img-1 {
-        background-image: url(main/block/images/block-img-1-dt.jpg);
+        background-image: url(images/block-img-1-dt.jpg);
       }
     }
 
@@ -125,7 +125,7 @@ html {
           list-style-type: none;
 
           li {
-            background: url("main/svg/marker.svg") no-repeat left center;
+            background: url("svg/marker.svg") no-repeat left center;
             padding-left: 24px;
             height: 16px;
             margin: 5px 0;
@@ -198,11 +198,11 @@ html {
       div.img-container {
 
         &.img-0 {
-          background-image: url(main/block/images/block-img-0-t.jpg);
+          background-image: url(images/block-img-0-t.jpg);
         }
 
         &.img-1 {
-          background-image: url(main/block/images/block-img-1-t.jpg);
+          background-image: url(images/block-img-1-t.jpg);
         }
       }
 
@@ -237,11 +237,11 @@ html {
       div.img-container {
 
         &.img-0 {
-          background-image: url(main/block/images/block-img-0-m.jpg);
+          background-image: url(images/block-img-0-m.jpg);
         }
 
         &.img-1 {
-          background-image: url(main/block/images/block-img-1-m.jpg);
+          background-image: url(images/block-img-1-m.jpg);
         }
       }
     }
