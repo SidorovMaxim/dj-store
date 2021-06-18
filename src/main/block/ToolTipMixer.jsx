@@ -8,9 +8,9 @@ const ToolTipMixer = () => {
   const toggleOpacity = () => setBlockOpacity(blockOpacity === 0 ? 1 : 0);
 
   return (
-    <div className="tool-tip">
+    <div className="tool-tip-container">
       <div
-        className="block"
+        className="tool-tip"
         style={{
           opacity: blockOpacity,
           zIndex: blockOpacity === 0 ? -1 : 9
@@ -22,7 +22,7 @@ const ToolTipMixer = () => {
           alt="mixer-icon"
         />
 
-        <div className="block-name">
+        <div className="tool-tip-name">
           Микшерный пульт<br />
           Yamaha MG10
         </div>
@@ -37,9 +37,9 @@ const ToolTipMixer = () => {
         <button className="close" onClick={toggleOpacity} />
       </div>
 
-      <button className="open" onClick={toggleOpacity}>
-        +
-      </button>
+      <div className="button-container">
+        <button className="open" onClick={toggleOpacity}> + </button>
+      </div>
     </div>
   );
 };
