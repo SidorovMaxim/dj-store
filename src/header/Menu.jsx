@@ -5,12 +5,12 @@ import Phone from './Phone.jsx';
 
 
 const Menu = () => {
-  const [ displayMenu, setDisplayMenu ] = useState('');
+  const [ menuVisibility, setMenuVisibility ] = useState('closed');
   const [ togglerClass, setTogglerClass ] = useState('open');
 
 
   const handleMenuToggler = () => {
-    setDisplayMenu(displayMenu === 'flex' ? 'none' : 'flex');
+    setMenuVisibility(menuVisibility === 'closed' ? 'opened' : 'closed');
     setTogglerClass(togglerClass === 'open' ? 'close' : 'open');
   }
 
@@ -21,8 +21,7 @@ const Menu = () => {
         onClick={handleMenuToggler}
       />
 
-      <div className="menu" style={{display: displayMenu}}>
-
+      <div className={`menu ${menuVisibility}`}>
         <Nav />
         
         <button className="fill-out-brief">
