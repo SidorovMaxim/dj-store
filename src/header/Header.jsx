@@ -37,8 +37,8 @@ const Header = () => {
         transform: `translateY(${headerPosition}%)`
       }}
     >
-      <a className="logo" href="/">
-        <img src={logo} alt="logo" />
+      <a className="logo" href="./">
+        <img src={"." + logo} alt="logo" />
       </a>
       <Menu />
     </header>

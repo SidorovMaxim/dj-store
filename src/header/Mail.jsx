@@ -9,7 +9,7 @@ const Mail = () => {
         Напишите нам
       </div>
 
-      <img className="mail-icon" src={mailIcon} alt="mail-icon" />
+      <img className="mail-icon" src={"." + mailIcon} alt="mail-icon" />
 
       <span className="mail-text">
         info@sld-store.ru

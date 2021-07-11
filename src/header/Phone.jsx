@@ -8,7 +8,7 @@ const Phone = () => {
   
   return (
     <span className="phone" onClick={togglePopUpCall}>
-      <img className="phone-icon" src={phoneIcon} alt="phone-icon" />
+      <img className="phone-icon" src={"." + phoneIcon} alt="phone-icon" />
 
       <div className="phone-text-desc">
         Обратный звонок

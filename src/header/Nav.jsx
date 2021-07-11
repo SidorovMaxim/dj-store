@@ -3,12 +3,12 @@ import { home, projects, services, about, solutions, contacts } from './Icons.js
 
 
 const ul = [
-  {name: 'Главная', path: '/', icon: home},
-  {name: 'Проекты', path: '/projects', icon: projects},
-  {name: 'Услуги', path: '/services', icon: services},
-  {name: 'О компании', path: '/about', icon: about},
-  {name: 'Готовые решения', path: '/solutions', icon: solutions},
-  {name: 'Контакты', path: '/contacts', icon: contacts}
+  {name: 'Главная', path: './', icon: home},
+  {name: 'Проекты', path: './projects', icon: projects},
+  {name: 'Услуги', path: './services', icon: services},
+  {name: 'О компании', path: './about', icon: about},
+  {name: 'Готовые решения', path: './solutions', icon: solutions},
+  {name: 'Контакты', path: './contacts', icon: contacts}
 ];
 
 
