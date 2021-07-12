@@ -18,7 +18,7 @@ const ToolTipMixer = () => {
       >
         <img
           className="mixer-icon"
-          src={"." + mixerIcon}
+          src={mixerIcon}
           alt="mixer-icon"
         />
 

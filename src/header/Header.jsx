@@ -38,7 +38,7 @@ const Header = () => {
       }}
     >
       <a className="logo" href="./">
-        <img src={"." + logo} alt="logo" />
+        <img src={logo} alt="logo" />
       </a>
       <Menu />
     </header>
